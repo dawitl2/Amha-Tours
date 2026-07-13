@@ -1,25 +1,24 @@
 import { siteData } from "../data/siteData";
+import Link from "next/link";
 
 export function Footer() {
   return (
     <footer className="footer">
       <div className="shell">
         <div className="footer-main">
-          <a className="brand footer-brand" href="#home" aria-label="Amaha Tours home">
-            <span className="logo-placeholder">{siteData.logoLabel}</span>
-            <span>Amaha Tours</span>
-          </a>
+          <Link className="brand footer-brand" href="/#home" aria-label="Amaha Tours home">
+            <img className="brand-logo" src="/logo.png" alt="Amaha Tours" />
+          </Link>
           <nav aria-label="Footer navigation">
-            {siteData.nav.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
+            {siteData.nav.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
           </nav>
-          <a className="button button-outline-dark" href={siteData.contact.whatsappHref}>WhatsApp Amaha <span aria-hidden="true">→</span></a>
+          <Link className="button button-outline-dark" href="/#contact">Plan a ride <span aria-hidden="true">-&gt;</span></Link>
         </div>
         <div className="footer-bottom">
-          <p>© 2026 Amaha Tours. All rights reserved.</p>
-          <p>{siteData.contact.displayPhone} · {siteData.contact.email} · placeholder details</p>
+          <p>&copy; 2026 Amaha Tours. All rights reserved.</p>
+          <p>Addis Ababa / Airport transfers / Private city routes</p>
         </div>
       </div>
     </footer>
   );
 }
-

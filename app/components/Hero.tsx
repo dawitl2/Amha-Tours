@@ -1,5 +1,6 @@
 import { siteData } from "../data/siteData";
 import { Navbar } from "./Navbar";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -9,29 +10,29 @@ export function Hero() {
       <div className="hero-inner shell">
         <Navbar />
         <div className="hero-copy">
-          <p className="eyebrow light">Private rides · Addis Ababa</p>
+          <p className="eyebrow light">Private rides / Addis Ababa</p>
           <h1 id="hero-title">
             <span className="desktop-hero-text">Explore Addis Ababa with a trusted local driver</span>
-            <span className="mobile-hero-text">Explore Addis with a trusted local driver</span>
+            <span className="mobile-hero-text">Your easier way around Addis</span>
           </h1>
           <p className="hero-intro">
             <span className="desktop-hero-text">
-              Amaha offers pre-booked airport transfers, private city rides and personalized tours—planned directly with you.
+              Amaha offers pre-booked airport transfers, private city rides and personalized tours, planned directly with you.
             </span>
             <span className="mobile-hero-text">
-              Airport transfers, city rides and flexible tours—planned directly with Amaha.
+              Airport pickups, city rides and flexible local tours, arranged directly with Amaha.
             </span>
           </p>
           <div className="button-row">
-            <a className="button button-lime" href={siteData.contact.whatsappHref}>
-              Contact on WhatsApp <span aria-hidden="true">→</span>
-            </a>
-            <a className="button button-ghost" href="#services">
+            <Link className="button button-lime" href="/#contact">
+              Plan your ride <span aria-hidden="true">-&gt;</span>
+            </Link>
+            <Link className="button button-ghost" href="/#services">
               View services
-            </a>
+            </Link>
           </div>
           <p className="trust-line">
-            <span aria-hidden="true">✓</span> Pre-booked rides&nbsp; · &nbsp;Airport pickup&nbsp; · &nbsp;Personalized city tours
+            <span aria-hidden="true">OK</span> Pre-booked rides / Airport pickup / Personalized city tours
           </p>
         </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { siteData } from "../data/siteData";
 
 export function Navbar() {
@@ -16,22 +17,21 @@ export function Navbar() {
 
   return (
     <header className="site-header">
-      <a className="brand" href="#home" aria-label="Amaha Tours home">
-        <span className="logo-placeholder">{siteData.logoLabel}</span>
-        <span>Amaha Tours</span>
-      </a>
+      <Link className="brand" href="/#home" aria-label="Amaha Tours home">
+        <img className="brand-logo" src="/logo.png" alt="Amaha Tours" />
+      </Link>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
         {siteData.nav.map((item) => (
-          <a key={item.href} href={item.href}>
+          <Link key={item.href} href={item.href}>
             {item.label}
-          </a>
+          </Link>
         ))}
       </nav>
 
-      <a className="button button-outline nav-action" href={siteData.contact.whatsappHref}>
-        Book a ride <span aria-hidden="true">→</span>
-      </a>
+      <Link className="button button-outline nav-action" href="/#contact">
+        Book a ride <span aria-hidden="true">-&gt;</span>
+      </Link>
 
       <button
         className="menu-button"
@@ -52,15 +52,14 @@ export function Navbar() {
         aria-label="Mobile navigation"
       >
         {siteData.nav.map((item) => (
-          <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+          <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
             {item.label}
-          </a>
+          </Link>
         ))}
-        <a className="button button-lime" href={siteData.contact.whatsappHref}>
-          WhatsApp Amaha <span aria-hidden="true">→</span>
-        </a>
+        <Link className="button button-lime" href="/#contact" onClick={() => setOpen(false)}>
+          Plan a ride <span aria-hidden="true">-&gt;</span>
+        </Link>
       </nav>
     </header>
   );
 }
-

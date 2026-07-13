@@ -1,4 +1,5 @@
 import { siteData } from "../data/siteData";
+import Link from "next/link";
 
 export function HotelTransport() {
   return (
@@ -16,21 +17,20 @@ export function HotelTransport() {
 
         <div className="hotel-grid">
           <div className="hotel-list">
-            <p className="example-label">Editable example destinations · not official partnerships</p>
+            <p className="example-label">Common pickup areas / no hotel partnership required</p>
             {siteData.hotels.map((hotel, index) => (
-              <div className="hotel-row" key={hotel}>
+              <Link className="hotel-row" href="/#contact" key={hotel}>
                 <span>0{index + 1}</span>
                 <strong>{hotel}</strong>
-                <span aria-hidden="true">↗</span>
-              </div>
+                <span aria-hidden="true">-&gt;</span>
+              </Link>
             ))}
           </div>
           <div className="hotel-image image-frame">
-            <img src="/addis-city.jpg" alt="Temporary Addis Ababa city image for hotel and local transportation" />
+            <img src="/Addis highlights.png" alt="Evening skyline and main roads in Addis Ababa" />
           </div>
         </div>
       </div>
     </section>
   );
 }
-

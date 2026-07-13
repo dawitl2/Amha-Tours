@@ -10,13 +10,13 @@ export function Contact() {
     const message = [
       "Hello Amaha, I would like to ask about a ride.",
       `Name: ${form.get("name") || ""}`,
-      `Contact: ${form.get("contact") || ""}`,
+      `Reply to: ${form.get("contact") || ""}`,
       `Pickup: ${form.get("pickup") || ""}`,
       `Destination: ${form.get("destination") || ""}`,
       `Date: ${form.get("date") || ""}`,
       `Message: ${form.get("message") || ""}`,
     ].join("\n");
-    window.open(`${siteData.contact.whatsappHref}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -24,22 +24,21 @@ export function Contact() {
       <div className="shell contact-grid">
         <div className="contact-copy">
           <p className="eyebrow light">Ready to plan your ride?</p>
-          <h2 id="contact-title">Contact Amaha directly</h2>
+          <h2 id="contact-title">Start the conversation</h2>
           <p>
-            Share your travel date, pickup and destination. Amaha will confirm availability, schedule and price with you directly.
+            Share your date, pickup and destination. The form prepares a message that you can send from WhatsApp without creating an account.
           </p>
           <div className="contact-links">
-            <a href={siteData.contact.whatsappHref}>
-              <span>WhatsApp</span><strong>{siteData.contact.displayPhone}</strong><b aria-hidden="true">↗</b>
+            <a href={siteData.contact.whatsappHref} target="_blank" rel="noreferrer">
+              <span>WhatsApp</span><strong>Open a new message</strong><b aria-hidden="true">-&gt;</b>
             </a>
-            <a href={siteData.contact.phoneHref}>
-              <span>Phone</span><strong>{siteData.contact.displayPhone}</strong><b aria-hidden="true">↗</b>
+            <a href={siteData.contact.telegramHref} target="_blank" rel="noreferrer">
+              <span>Telegram</span><strong>Share Amaha Tours</strong><b aria-hidden="true">-&gt;</b>
             </a>
-            <a href={siteData.contact.emailHref}>
-              <span>Email</span><strong>{siteData.contact.email}</strong><b aria-hidden="true">↗</b>
+            <a href={siteData.contact.facebookHref} target="_blank" rel="noreferrer">
+              <span>Facebook</span><strong>Share this website</strong><b aria-hidden="true">-&gt;</b>
             </a>
           </div>
-          <p className="placeholder-notice">Placeholder contact details · replace before publishing</p>
         </div>
 
         <form className="inquiry-form" onSubmit={handleSubmit}>
@@ -69,15 +68,14 @@ export function Contact() {
           </label>
           <label>
             Message
-            <textarea name="message" rows={4} placeholder="Flight number, preferred time, number of travelers or places you want to visit" />
+            <textarea name="message" rows={4} placeholder="Flight number, preferred time, travelers or places you want to visit" />
           </label>
           <button className="button button-lime form-submit" type="submit">
-            Prepare WhatsApp message <span aria-hidden="true">→</span>
+            Prepare WhatsApp message <span aria-hidden="true">-&gt;</span>
           </button>
-          <p className="form-note">This form does not store a booking. It opens a pre-filled WhatsApp message.</p>
+          <p className="form-note">Your details are not stored by this website. WhatsApp opens so you can choose where to send the message.</p>
         </form>
       </div>
     </section>
   );
 }
-

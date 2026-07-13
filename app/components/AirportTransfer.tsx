@@ -1,10 +1,10 @@
-import { siteData } from "../data/siteData";
+import Link from "next/link";
 
 const steps = [
   {
     number: "01",
     title: "Contact Amaha before arrival",
-    text: "Send a WhatsApp message, call or email while planning your trip.",
+    text: "Send a message while planning your trip and describe the ride you need.",
   },
   {
     number: "02",
@@ -23,8 +23,8 @@ export function AirportTransfer() {
     <section className="airport section" aria-labelledby="airport-title">
       <div className="shell split-intro">
         <div className="airport-image image-frame">
-          <img src="/addis-city.jpg" alt="Temporary Addis Ababa city image used for the airport transfer section" />
-          <div className="image-note">Bole International Airport · pre-booked service</div>
+          <img src="/A calmer arrival.jpg" alt="Traveler riding comfortably in the back seat of a car" />
+          <div className="image-note">Bole International Airport / pre-booked service</div>
         </div>
 
         <div className="airport-copy">
@@ -44,12 +44,11 @@ export function AirportTransfer() {
               </article>
             ))}
           </div>
-          <a className="button button-dark" href={siteData.contact.whatsappHref}>
-            Plan an airport pickup <span aria-hidden="true">→</span>
-          </a>
+          <Link className="button button-dark" href="/#contact">
+            Plan an airport pickup <span aria-hidden="true">-&gt;</span>
+          </Link>
         </div>
       </div>
     </section>
   );
 }
-

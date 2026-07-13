@@ -4,23 +4,21 @@ A responsive, frontend-only React website for a private driver and local tour se
 
 ## Edit the site
 
-Business details, services, destinations, example hotels, journey ideas and temporary reviews are grouped in `app/data/siteData.ts`.
+Services, trip ideas and traveler stories are grouped in `app/data/siteData.ts`. Destination details, gallery images and visit notes are in `app/data/places.ts`.
 
-The two supplied local images are stored as:
+Brand, driver, profile, journey and destination photography is stored in `public/`. The three destination routes are:
 
-- `public/hero-addis.png` — hero image
-- `public/addis-city.jpg` — all other photo and profile placeholders
+- `/places/unity-park`
+- `/places/national-museum`
+- `/places/entoto-park`
 
-Replace the phone, WhatsApp and email placeholders before publishing.
+The inquiry form does not save data. It prepares a WhatsApp message in a new tab. Add Amaha's confirmed business number or social handles to `app/data/siteData.ts` when they are available.
 
 ## Run locally
 
-Use Node.js 22.13 or newer.
+Use Node.js 22.13 or newer. Node.js 24 is recommended for the current vinext toolchain.
 
 ```bash
 npm install
 npm run dev
 ```
-
-The inquiry form does not save data. It prepares a WhatsApp message in a new tab.
-

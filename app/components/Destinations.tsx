@@ -1,4 +1,6 @@
-import { siteData } from "../data/siteData";
+import { places } from "../data/places";
+import { JourneyGallery } from "./JourneyGallery";
+import Link from "next/link";
 
 export function Destinations() {
   return (
@@ -10,26 +12,22 @@ export function Destinations() {
               <p className="eyebrow">Where would you like to go?</p>
               <h2 id="destinations-title">Explore Addis with local help</h2>
             </div>
-            <a className="text-link" href="#contact">Plan a custom route <span aria-hidden="true">↗</span></a>
+            <Link className="text-link" href="/#contact">Plan a custom route <span aria-hidden="true">-&gt;</span></Link>
           </div>
 
           <div className="destination-grid">
-            {siteData.destinations.map((destination, index) => (
-              <article className="image-card destination-card" key={destination.name}>
-                <img
-                  src="/addis-city.jpg"
-                  alt={`Temporary Addis Ababa image placeholder for ${destination.name}`}
-                  style={{ objectPosition: destination.position }}
-                />
+            {places.map((destination, index) => (
+              <Link className="image-card destination-card" href={`/places/${destination.slug}`} key={destination.name} aria-label={`Explore ${destination.name}`}>
+                <img src={destination.images[0].src} alt={destination.images[0].alt} />
                 <div className="image-card-shade" />
                 <div className="image-card-copy">
                   <span className="card-index">0{index + 1}</span>
-                  <p>{destination.meta}</p>
+                  <p>{destination.cardMeta}</p>
                   <h3>{destination.name}</h3>
                   <p className="card-description">{destination.description}</p>
-                  <a href={siteData.contact.whatsappHref}>Ask Amaha <span aria-hidden="true">→</span></a>
+                  <span className="card-cta">Explore the place <span aria-hidden="true">-&gt;</span></span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
@@ -40,30 +38,11 @@ export function Destinations() {
           <div className="center-heading">
             <p className="eyebrow">Route inspiration</p>
             <h2 id="journeys-title">Journeys you can arrange</h2>
-            <p>Examples only—every ride is organized directly around your plans.</p>
+            <p>Start with one idea or combine several. Every route can be adjusted around your arrival time, interests and energy.</p>
           </div>
-          <div className="journey-grid">
-            {siteData.journeys.map((journey) => (
-              <article className="image-card journey-card" key={journey.name}>
-                <img
-                  src="/addis-city.jpg"
-                  alt={`Temporary Addis Ababa image placeholder for ${journey.name}`}
-                  style={{ objectPosition: journey.position }}
-                />
-                <div className="image-card-shade" />
-                <div className="journey-copy">
-                  <h3>{journey.name}</h3>
-                  <p>{journey.meta}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="center-action">
-            <a className="button button-lime" href="#contact">Arrange your route <span aria-hidden="true">→</span></a>
-          </div>
+          <JourneyGallery />
         </div>
       </section>
     </>
   );
 }
-
