@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  --font-sans: "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
   --ink: #082f39;
   --ink-deep: #05252d;
   --lime: #c7f42b;
@@ -202,7 +204,6 @@ p {
   background-image: url("/hero-addis.png");
   background-position: center 45%;
   background-size: cover;
-  transform: scale(1.005);
 }
 
 .hero-shade {
@@ -446,8 +447,8 @@ p {
 .services::before {
   position: absolute;
   top: -20px;
-  right: -3%;
-  left: -3%;
+  right: 0;
+  left: 0;
   height: 44px;
   border-radius: 50%;
   background: var(--lime-soft);
@@ -1496,4 +1497,3 @@ p {
     animation-iteration-count: 1 !important;
   }
 }
-
