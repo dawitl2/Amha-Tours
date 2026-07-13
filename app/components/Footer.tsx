@@ -12,7 +12,7 @@ export function Footer() {
           <nav aria-label="Footer navigation">
             {siteData.nav.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
           </nav>
-          <Link className="button button-outline-dark" href="/#contact">Plan a ride <span aria-hidden="true">-&gt;</span></Link>
+          <Link className="button button-outline-dark" href="/book">Plan a ride <span aria-hidden="true">-&gt;</span></Link>
         </div>
         <div className="footer-bottom">
           <p>&copy; 2026 Amaha Tours. All rights reserved.</p>

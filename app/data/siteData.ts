@@ -6,7 +6,7 @@ export const siteData = {
   nav: [
     { label: "Home", href: "/#home" },
     { label: "Services", href: "/#services" },
-    { label: "Explore Addis", href: "/#explore" },
+    { label: "Explore Addis", href: "/places" },
     { label: "About", href: "/#about" },
     { label: "Contact", href: "/#contact" },
   ],
@@ -14,6 +14,7 @@ export const siteData = {
     whatsappHref: `https://wa.me/?text=${encodeURIComponent("Hello Amaha, I would like to ask about a ride in Addis Ababa.")}`,
     telegramHref: `https://t.me/share/url?url=${encodeURIComponent(siteUrl)}&text=${encodeURIComponent(shareText)}`,
     facebookHref: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(siteUrl)}`,
+    instagramHref: "https://www.instagram.com/",
   },
   services: [
     {
@@ -59,9 +60,6 @@ export const siteData = {
     { name: "Entoto morning", meta: "Forest views and city history", image: "/Entoto morning.png", position: "center" },
     { name: "Museum afternoon", meta: "Culture, design and local coffee", image: "/Museum afternoon.jpg", position: "center" },
     { name: "Dinner transfer", meta: "Hotel to restaurant and back", image: "/Dinner transfer.png", position: "center" },
-    { name: "Unity Park afternoon", meta: "Gardens, history and architecture", image: "/unity3.jpg", position: "center" },
-    { name: "Lucy and ancient Ethiopia", meta: "National Museum visit", image: "/National Museum1.jpg", position: "center" },
-    { name: "A calmer arrival", meta: "Airport pickup with a clear plan", image: "/A calmer arrival.jpg", position: "center" },
   ],
   hotels: [
     "Bole hotels and guesthouses",

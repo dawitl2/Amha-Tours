@@ -24,7 +24,7 @@ export function Hero() {
             </span>
           </p>
           <div className="button-row">
-            <Link className="button button-lime" href="/#contact">
+            <Link className="button button-lime" href="/book">
               Plan your ride <span aria-hidden="true">-&gt;</span>
             </Link>
             <Link className="button button-ghost" href="/#services">

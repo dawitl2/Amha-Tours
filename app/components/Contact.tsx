@@ -1,9 +1,10 @@
 "use client";
 
 import type { FormEvent } from "react";
+import { FaFacebookF, FaInstagram, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import { siteData } from "../data/siteData";
 
-export function Contact() {
+export function Contact({ defaultDestination = "" }: { defaultDestination?: string }) {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
@@ -28,15 +29,18 @@ export function Contact() {
           <p>
             Share your date, pickup and destination. The form prepares a message that you can send from WhatsApp without creating an account.
           </p>
-          <div className="contact-links">
-            <a href={siteData.contact.whatsappHref} target="_blank" rel="noreferrer">
-              <span>WhatsApp</span><strong>Open a new message</strong><b aria-hidden="true">-&gt;</b>
+          <div className="social-links" aria-label="Social and messaging links">
+            <a href={siteData.contact.whatsappHref} target="_blank" rel="noreferrer" aria-label="Open WhatsApp">
+              <FaWhatsapp aria-hidden="true" /><span>WhatsApp</span>
             </a>
-            <a href={siteData.contact.telegramHref} target="_blank" rel="noreferrer">
-              <span>Telegram</span><strong>Share Amaha Tours</strong><b aria-hidden="true">-&gt;</b>
+            <a href={siteData.contact.telegramHref} target="_blank" rel="noreferrer" aria-label="Share with Telegram">
+              <FaTelegramPlane aria-hidden="true" /><span>Telegram</span>
             </a>
-            <a href={siteData.contact.facebookHref} target="_blank" rel="noreferrer">
-              <span>Facebook</span><strong>Share this website</strong><b aria-hidden="true">-&gt;</b>
+            <a href={siteData.contact.instagramHref} target="_blank" rel="noreferrer" aria-label="Open Instagram">
+              <FaInstagram aria-hidden="true" /><span>Instagram</span>
+            </a>
+            <a href={siteData.contact.facebookHref} target="_blank" rel="noreferrer" aria-label="Share with Facebook">
+              <FaFacebookF aria-hidden="true" /><span>Facebook</span>
             </a>
           </div>
         </div>
@@ -59,7 +63,7 @@ export function Contact() {
             </label>
             <label>
               Destination
-              <input name="destination" type="text" placeholder="Where would you like to go?" />
+              <input name="destination" type="text" defaultValue={defaultDestination} placeholder="Where would you like to go?" />
             </label>
           </div>
           <label>

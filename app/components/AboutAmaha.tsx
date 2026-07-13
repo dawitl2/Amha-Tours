@@ -18,7 +18,7 @@ export function AboutAmaha() {
             <span><b>02</b> Flexible local routes</span>
             <span><b>03</b> Pre-arranged timing</span>
           </div>
-          <Link className="button button-dark" href="/#contact">Say hello to Amaha <span aria-hidden="true">-&gt;</span></Link>
+          <Link className="button button-dark" href="/book">Say hello to Amaha <span aria-hidden="true">-&gt;</span></Link>
         </div>
 
         <div className="about-portrait">

@@ -6,7 +6,14 @@ A responsive, frontend-only React website for a private driver and local tour se
 
 Services, trip ideas and traveler stories are grouped in `app/data/siteData.ts`. Destination details, gallery images and visit notes are in `app/data/places.ts`.
 
-Brand, driver, profile, journey and destination photography is stored in `public/`. The three destination routes are:
+Brand, driver, profile, journey and destination photography is stored in `public/`.
+
+The place finder and booking routes are:
+
+- `/places` — searchable, filterable place listing
+- `/book` — ride request page with destination pre-fill
+
+The three destination guides are:
 
 - `/places/unity-park`
 - `/places/national-museum`

@@ -44,7 +44,7 @@ export function AirportTransfer() {
               </article>
             ))}
           </div>
-          <Link className="button button-dark" href="/#contact">
+          <Link className="button button-dark" href="/book?destination=Bole%20Airport%20pickup">
             Plan an airport pickup <span aria-hidden="true">-&gt;</span>
           </Link>
         </div>

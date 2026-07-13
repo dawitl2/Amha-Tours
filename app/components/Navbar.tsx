@@ -29,7 +29,7 @@ export function Navbar() {
         ))}
       </nav>
 
-      <Link className="button button-outline nav-action" href="/#contact">
+      <Link className="button button-outline nav-action" href="/book">
         Book a ride <span aria-hidden="true">-&gt;</span>
       </Link>
 
@@ -56,7 +56,7 @@ export function Navbar() {
             {item.label}
           </Link>
         ))}
-        <Link className="button button-lime" href="/#contact" onClick={() => setOpen(false)}>
+        <Link className="button button-lime" href="/book" onClick={() => setOpen(false)}>
           Plan a ride <span aria-hidden="true">-&gt;</span>
         </Link>
       </nav>

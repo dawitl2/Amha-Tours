@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FaFacebookF, FaInstagram, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import { Footer } from "../../components/Footer";
 import { Navbar } from "../../components/Navbar";
 import { PlaceGallery } from "../../components/PlaceGallery";
@@ -99,9 +100,10 @@ export default async function PlacePage({ params }: { params: Promise<{ slug: st
           <blockquote>{place.visitorNote}</blockquote>
           <div className="place-share" aria-label="Share this place">
             <span>Share the idea</span>
-            <a href={`https://wa.me/?text=${encodeURIComponent(`${shareText} ${pageUrl}`)}`} target="_blank" rel="noreferrer">WhatsApp</a>
-            <a href={`https://t.me/share/url?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}`} target="_blank" rel="noreferrer">Telegram</a>
-            <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`} target="_blank" rel="noreferrer">Facebook</a>
+            <a href={`https://wa.me/?text=${encodeURIComponent(`${shareText} ${pageUrl}`)}`} target="_blank" rel="noreferrer"><FaWhatsapp aria-hidden="true" /><span>WhatsApp</span></a>
+            <a href={`https://t.me/share/url?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}`} target="_blank" rel="noreferrer"><FaTelegramPlane aria-hidden="true" /><span>Telegram</span></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><FaInstagram aria-hidden="true" /><span>Instagram</span></a>
+            <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`} target="_blank" rel="noreferrer"><FaFacebookF aria-hidden="true" /><span>Facebook</span></a>
           </div>
         </div>
       </section>
@@ -109,7 +111,7 @@ export default async function PlacePage({ params }: { params: Promise<{ slug: st
       <section className="place-cta section">
         <div className="shell place-cta-inner">
           <div><p className="eyebrow light">Build it into your day</p><h2>Want to include {place.name}?</h2></div>
-          <Link className="button button-lime" href="/#contact">Plan a route with Amaha <span aria-hidden="true">-&gt;</span></Link>
+          <Link className="button button-lime" href={`/book?destination=${encodeURIComponent(place.name)}`}>Book this place <span aria-hidden="true">-&gt;</span></Link>
         </div>
       </section>
       <Footer />

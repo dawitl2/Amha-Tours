@@ -3,6 +3,8 @@ import { JourneyGallery } from "./JourneyGallery";
 import Link from "next/link";
 
 export function Destinations() {
+  const homePlaces = [...places, ...places];
+
   return (
     <>
       <section className="destinations section" id="explore" aria-labelledby="destinations-title">
@@ -12,12 +14,12 @@ export function Destinations() {
               <p className="eyebrow">Where would you like to go?</p>
               <h2 id="destinations-title">Explore Addis with local help</h2>
             </div>
-            <Link className="text-link" href="/#contact">Plan a custom route <span aria-hidden="true">-&gt;</span></Link>
+            <Link className="text-link" href="/places">Search and filter places <span aria-hidden="true">-&gt;</span></Link>
           </div>
 
           <div className="destination-grid">
-            {places.map((destination, index) => (
-              <Link className="image-card destination-card" href={`/places/${destination.slug}`} key={destination.name} aria-label={`Explore ${destination.name}`}>
+            {homePlaces.map((destination, index) => (
+              <Link className="image-card destination-card" href={`/places/${destination.slug}`} key={`${destination.slug}-${index}`} aria-label={`Explore ${destination.name}`}>
                 <img src={destination.images[0].src} alt={destination.images[0].alt} />
                 <div className="image-card-shade" />
                 <div className="image-card-copy">
@@ -29,6 +31,9 @@ export function Destinations() {
                 </div>
               </Link>
             ))}
+          </div>
+          <div className="center-action">
+            <Link className="button button-dark" href="/places">More places <span aria-hidden="true">-&gt;</span></Link>
           </div>
         </div>
       </section>

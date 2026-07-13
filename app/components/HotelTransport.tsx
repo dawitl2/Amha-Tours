@@ -19,7 +19,7 @@ export function HotelTransport() {
           <div className="hotel-list">
             <p className="example-label">Common pickup areas / no hotel partnership required</p>
             {siteData.hotels.map((hotel, index) => (
-              <Link className="hotel-row" href="/#contact" key={hotel}>
+              <Link className="hotel-row" href={`/book?destination=${encodeURIComponent(hotel)}`} key={hotel}>
                 <span>0{index + 1}</span>
                 <strong>{hotel}</strong>
                 <span aria-hidden="true">-&gt;</span>
