@@ -10,9 +10,17 @@ export function Hero() {
         <Navbar />
         <div className="hero-copy">
           <p className="eyebrow light">Private rides · Addis Ababa</p>
-          <h1 id="hero-title">Explore Addis Ababa with a trusted local driver</h1>
+          <h1 id="hero-title">
+            <span className="desktop-hero-text">Explore Addis Ababa with a trusted local driver</span>
+            <span className="mobile-hero-text">Explore Addis with a trusted local driver</span>
+          </h1>
           <p className="hero-intro">
-            Amaha offers pre-booked airport transfers, private city rides and personalized tours—planned directly with you.
+            <span className="desktop-hero-text">
+              Amaha offers pre-booked airport transfers, private city rides and personalized tours—planned directly with you.
+            </span>
+            <span className="mobile-hero-text">
+              Airport transfers, city rides and flexible tours—planned directly with Amaha.
+            </span>
           </p>
           <div className="button-row">
             <a className="button button-lime" href={siteData.contact.whatsappHref}>
@@ -39,9 +47,8 @@ export function Hero() {
       </div>
 
       <div className="word-ribbon" aria-hidden="true">
-        <span>arrive</span><span>explore</span><span>connect</span><span>discover</span><span>relax</span>
+        <span>explore</span><span>discover</span><span>arrive</span><span>connect</span><span>relax</span>
       </div>
     </section>
   );
 }
-
