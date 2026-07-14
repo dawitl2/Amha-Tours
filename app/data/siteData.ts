@@ -56,8 +56,8 @@ export const siteData = {
   ],
   journeys: [
     { name: "Bole arrival", meta: "Airport to hotel", image: "/Bole arrival.jpg", position: "center" },
-    { name: "Addis highlights", meta: "Flexible full-day route", image: "/Addis highlights.png", position: "center" },
-    { name: "Entoto morning", meta: "Forest views and city history", image: "/Entoto morning.png", position: "center" },
+    { name: "Addis highlights", meta: "Flexible full-day route", image: "/Addis highlights.webp", position: "center" },
+    { name: "Entoto morning", meta: "Forest views and city history", image: "/Entoto morning.webp", position: "center" },
     { name: "Museum afternoon", meta: "Culture, design and local coffee", image: "/Museum afternoon.jpg", position: "center" },
     { name: "Dinner transfer", meta: "Hotel to restaurant and back", image: "/Dinner transfer.png", position: "center" },
   ],

@@ -27,7 +27,7 @@ export function HotelTransport() {
             ))}
           </div>
           <div className="hotel-image image-frame">
-            <img src="/Addis highlights.png" alt="Evening skyline and main roads in Addis Ababa" />
+            <img src="/Addis highlights.webp" alt="Evening skyline and main roads in Addis Ababa" />
           </div>
         </div>
       </div>
