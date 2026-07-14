@@ -3,8 +3,6 @@ import { JourneyGallery } from "./JourneyGallery";
 import Link from "next/link";
 
 export function Destinations() {
-  const homePlaces = [...places, ...places];
-
   return (
     <>
       <section className="destinations section" id="explore" aria-labelledby="destinations-title">
@@ -18,8 +16,8 @@ export function Destinations() {
           </div>
 
           <div className="destination-grid">
-            {homePlaces.map((destination, index) => (
-              <Link className="image-card destination-card" href={`/places/${destination.slug}`} key={`${destination.slug}-${index}`} aria-label={`Explore ${destination.name}`}>
+            {places.map((destination, index) => (
+              <Link className="image-card destination-card" href={`/places/${destination.slug}`} key={destination.slug} aria-label={`Explore ${destination.name}`}>
                 <img src={destination.images[0].src} alt={destination.images[0].alt} />
                 <div className="image-card-shade" />
                 <div className="image-card-copy">

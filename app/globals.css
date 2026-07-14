@@ -1135,6 +1135,12 @@ p {
   margin: 0;
 }
 
+.footer-bottom a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 1000px) {
   .site-header {
     grid-template-columns: 1fr auto;
@@ -2028,7 +2034,34 @@ p {
   }
 
   .hero-service-strip {
-    display: none;
+    display: grid;
+    bottom: 58px;
+    min-height: 112px;
+  }
+
+  .hero-service-strip article {
+    padding: 13px 9px 12px 0;
+  }
+
+  .hero-service-strip article + article {
+    padding-left: 9px;
+  }
+
+  .hero-service-strip span {
+    margin-bottom: 5px;
+    font-size: 0.58rem;
+  }
+
+  .hero-service-strip h2 {
+    font-size: 0.62rem;
+    line-height: 1.25;
+  }
+
+  .hero-service-strip p {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.52rem;
+    line-height: 1.35;
   }
 
   .hero-copy {
@@ -2156,6 +2189,26 @@ p {
 }
 
 @media (max-width: 390px) {
+  .hero-service-strip {
+    min-height: 116px;
+  }
+
+  .hero-service-strip article {
+    padding-right: 7px;
+  }
+
+  .hero-service-strip article + article {
+    padding-left: 7px;
+  }
+
+  .hero-service-strip h2 {
+    font-size: 0.58rem;
+  }
+
+  .hero-service-strip p {
+    font-size: 0.49rem;
+  }
+
   .hero-copy {
     padding-top: 34px;
   }
@@ -2335,6 +2388,24 @@ p {
 }
 
 /* Social channels */
+.contact-number {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  color: white;
+}
+
+.contact-number span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.7rem;
+}
+
+.contact-number strong {
+  border-bottom: 1px solid var(--lime);
+  font-size: 0.88rem;
+}
+
 .social-links {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

@@ -1,6 +1,23 @@
-import { siteData } from "../data/siteData";
 import { Navbar } from "./Navbar";
 import Link from "next/link";
+
+const heroSteps = [
+  {
+    number: "01",
+    title: "Call Amaha directly",
+    description: "One quick conversation. No account or booking platform.",
+  },
+  {
+    number: "02",
+    title: "Share your plan",
+    description: "Tell him your pickup, timing and the places you want to see.",
+  },
+  {
+    number: "03",
+    title: "Confirm and ride",
+    description: "Agree the time and price, then relax while Amaha handles the route.",
+  },
+] as const;
 
 export function Hero() {
   return (
@@ -36,12 +53,12 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="hero-service-strip" aria-label="Amaha Tours highlights">
-          {siteData.services.slice(0, 3).map((service) => (
-            <article key={service.number}>
-              <span>{service.number}</span>
-              <h2>{service.title}</h2>
-              <p>{service.description}</p>
+        <div className="hero-service-strip" aria-label="Three easy steps to arrange a ride">
+          {heroSteps.map((step) => (
+            <article key={step.number}>
+              <span>{step.number}</span>
+              <h2>{step.title}</h2>
+              <p>{step.description}</p>
             </article>
           ))}
         </div>

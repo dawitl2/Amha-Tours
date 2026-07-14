@@ -1,6 +1,3 @@
-const siteUrl = "https://amaha-tours-addis.big802240.chatgpt.site";
-const shareText = "Amaha Tours - private rides and local tours in Addis Ababa";
-
 export const siteData = {
   brand: "Amaha Tours",
   nav: [
@@ -11,10 +8,13 @@ export const siteData = {
     { label: "Contact", href: "/#contact" },
   ],
   contact: {
-    whatsappHref: `https://wa.me/?text=${encodeURIComponent("Hello Amaha, I would like to ask about a ride in Addis Ababa.")}`,
-    telegramHref: `https://t.me/share/url?url=${encodeURIComponent(siteUrl)}&text=${encodeURIComponent(shareText)}`,
-    facebookHref: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(siteUrl)}`,
-    instagramHref: "https://www.instagram.com/",
+    displayPhone: "+251 911 010 008",
+    phoneHref: "tel:+251911010008",
+    whatsappBaseHref: "https://wa.me/251911010008",
+    whatsappHref: `https://wa.me/251911010008?text=${encodeURIComponent("Hello Amaha, I would like to ask about a ride in Addis Ababa.")}`,
+    telegramHref: "https://t.me/+251911010008",
+    facebookHref: "https://www.facebook.com/share/17tfT8bqXy/",
+    instagramHref: "https://www.instagram.com/amha_abebaw/",
   },
   services: [
     {

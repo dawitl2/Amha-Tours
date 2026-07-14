@@ -17,7 +17,7 @@ export function Contact({ defaultDestination = "" }: { defaultDestination?: stri
       `Date: ${form.get("date") || ""}`,
       `Message: ${form.get("message") || ""}`,
     ].join("\n");
-    window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`${siteData.contact.whatsappBaseHref}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -29,17 +29,21 @@ export function Contact({ defaultDestination = "" }: { defaultDestination?: stri
           <p>
             Share your date, pickup and destination. The form prepares a message that you can send from WhatsApp without creating an account.
           </p>
+          <a className="contact-number" href={siteData.contact.phoneHref}>
+            <span>Call Amaha directly</span>
+            <strong>{siteData.contact.displayPhone}</strong>
+          </a>
           <div className="social-links" aria-label="Social and messaging links">
             <a href={siteData.contact.whatsappHref} target="_blank" rel="noreferrer" aria-label="Open WhatsApp">
               <FaWhatsapp aria-hidden="true" /><span>WhatsApp</span>
             </a>
-            <a href={siteData.contact.telegramHref} target="_blank" rel="noreferrer" aria-label="Share with Telegram">
+            <a href={siteData.contact.telegramHref} target="_blank" rel="noreferrer" aria-label="Open Telegram">
               <FaTelegramPlane aria-hidden="true" /><span>Telegram</span>
             </a>
             <a href={siteData.contact.instagramHref} target="_blank" rel="noreferrer" aria-label="Open Instagram">
               <FaInstagram aria-hidden="true" /><span>Instagram</span>
             </a>
-            <a href={siteData.contact.facebookHref} target="_blank" rel="noreferrer" aria-label="Share with Facebook">
+            <a href={siteData.contact.facebookHref} target="_blank" rel="noreferrer" aria-label="Open Facebook">
               <FaFacebookF aria-hidden="true" /><span>Facebook</span>
             </a>
           </div>

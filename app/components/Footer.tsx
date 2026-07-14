@@ -16,7 +16,7 @@ export function Footer() {
         </div>
         <div className="footer-bottom">
           <p>&copy; 2026 Amaha Tours. All rights reserved.</p>
-          <p>Addis Ababa / Airport transfers / Private city routes</p>
+          <p><a href={siteData.contact.phoneHref}>{siteData.contact.displayPhone}</a> / Addis Ababa / Ethiopia</p>
         </div>
       </div>
     </footer>
