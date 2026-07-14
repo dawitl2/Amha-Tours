@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = "https://amaha-tours-dawits-projects-b5dc96b5.vercel.app";
+const siteUrl = "https://amaha-tours.vercel.app";
 const title = "Amaha Tours | Private Driver in Addis Ababa";
 const description =
   "Private airport transfers, city rides and personalized Addis Ababa tours arranged directly with a trusted local driver in Ethiopia.";
