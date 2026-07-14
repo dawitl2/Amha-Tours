@@ -201,7 +201,7 @@ p {
 }
 
 .hero-image {
-  background-image: url("/hero-addis.png");
+  background-image: url("/hero-addis.webp");
   background-position: center 45%;
   background-size: cover;
   transform: scaleX(-1);

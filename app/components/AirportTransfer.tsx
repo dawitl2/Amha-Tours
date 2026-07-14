@@ -23,7 +23,7 @@ export function AirportTransfer() {
     <section className="airport section" aria-labelledby="airport-title">
       <div className="shell split-intro">
         <div className="airport-image image-frame">
-          <img src="/A calmer arrival.jpg" alt="Traveler riding comfortably in the back seat of a car" />
+          <img src="/A calmer arrival.webp" alt="Traveler riding comfortably in the back seat of a car" />
           <div className="image-note">Bole International Airport / pre-booked service</div>
         </div>
 

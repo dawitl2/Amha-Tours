@@ -18,7 +18,7 @@ export function Navbar() {
   return (
     <header className="site-header">
       <Link className="brand" href="/#home" aria-label="Amaha Tours home">
-        <img className="brand-logo" src="/logo.png" alt="Amaha Tours" />
+        <img className="brand-logo" src="/logo.webp" alt="Amaha Tours" />
       </Link>
 
       <nav className="desktop-nav" aria-label="Primary navigation">

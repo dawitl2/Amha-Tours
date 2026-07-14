@@ -22,7 +22,7 @@ export function AboutAmaha() {
         </div>
 
         <div className="about-portrait">
-          <img src="/Driver photo.png" alt="Amaha standing beside a car in Addis Ababa" />
+          <img src="/Driver photo.webp" alt="Amaha standing beside a car in Addis Ababa" />
           <div className="portrait-label">
             <span>Your driver in Addis Ababa</span>
             <strong>Amaha / Private local driver</strong>

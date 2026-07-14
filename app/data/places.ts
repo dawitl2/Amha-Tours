@@ -27,9 +27,9 @@ export const places: Place[] = [
     longDescription:
       "Set within the Grand Palace grounds, Unity Park gives visitors an approachable introduction to Ethiopia's landscapes, history and cultural diversity. It works especially well at the beginning of a city visit because Amaha can pair it with nearby museums, coffee or an evening meal.",
     images: [
-      { src: "/unity3.jpg", alt: "Landscaped gardens inside Unity Park at sunset" },
-      { src: "/unity2.jpg", alt: "Historic wooden palace building at Unity Park" },
-      { src: "/unity1.jpg", alt: "White lion resting in the wildlife area at Unity Park" },
+      { src: "/unity3.webp", alt: "Landscaped gardens inside Unity Park at sunset" },
+      { src: "/unity2.webp", alt: "Historic wooden palace building at Unity Park" },
+      { src: "/unity1.webp", alt: "White lion resting in the wildlife area at Unity Park" },
     ],
     airportDistance: "Approx. 9 km",
     driveTime: "25-45 min",
@@ -54,9 +54,9 @@ export const places: Place[] = [
     longDescription:
       "The National Museum of Ethiopia is one of Addis Ababa's essential cultural stops. Its best-known resident is Lucy, the 3.2-million-year-old hominin fossil, alongside archaeological finds, historic objects, royal collections and Ethiopian art. A measured visit leaves time to ask questions and connect the exhibits to the wider city.",
     images: [
-      { src: "/National Museum1.jpg", alt: "Lucy fossil display inside the National Museum of Ethiopia" },
-      { src: "/National Museum2.jpg", alt: "Exterior entrance of the National Museum of Ethiopia" },
-      { src: "/National Museum3.jpg", alt: "Royal garments and throne displayed in the National Museum" },
+      { src: "/National Museum1.webp", alt: "Lucy fossil display inside the National Museum of Ethiopia" },
+      { src: "/National Museum2.webp", alt: "Exterior entrance of the National Museum of Ethiopia" },
+      { src: "/National Museum3.webp", alt: "Royal garments and throne displayed in the National Museum" },
     ],
     airportDistance: "Approx. 10 km",
     driveTime: "30-50 min",
@@ -81,9 +81,9 @@ export const places: Place[] = [
     longDescription:
       "High on Mount Entoto, this large natural park offers a different side of Addis Ababa. Forest paths, lookout points, cafes and recreation areas make it easy to shape the stop around your energy level. It is a strong choice for a slower morning, family outing or sunset view before returning to the city.",
     images: [
-      { src: "/Entoto1.jpg", alt: "Bamboo-covered viewpoint walkway at Entoto Park" },
-      { src: "/Entoto2.jpg", alt: "Aerial view of forest and visitor buildings at Entoto Park" },
-      { src: "/Entoto3.jpg", alt: "Covered seating and city viewpoint at Entoto Park" },
+      { src: "/Entoto1.webp", alt: "Bamboo-covered viewpoint walkway at Entoto Park" },
+      { src: "/Entoto2.webp", alt: "Aerial view of forest and visitor buildings at Entoto Park" },
+      { src: "/Entoto3.webp", alt: "Covered seating and city viewpoint at Entoto Park" },
     ],
     airportDistance: "Approx. 18 km",
     driveTime: "45-75 min",

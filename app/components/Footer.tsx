@@ -7,7 +7,7 @@ export function Footer() {
       <div className="shell">
         <div className="footer-main">
           <Link className="brand footer-brand" href="/#home" aria-label="Amaha Tours home">
-            <img className="brand-logo" src="/logo.png" alt="Amaha Tours" />
+            <img className="brand-logo" src="/logo.webp" alt="Amaha Tours" />
           </Link>
           <nav aria-label="Footer navigation">
             {siteData.nav.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
