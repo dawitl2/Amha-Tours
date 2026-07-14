@@ -26,7 +26,7 @@ export default async function PlacePage({ params }: { params: Promise<{ slug: st
   const place = getPlace(slug);
   if (!place) notFound();
 
-  const pageUrl = `https://amaha-tours-addis.big802240.chatgpt.site/places/${place.slug}`;
+  const pageUrl = `https://amaha-tours-dawits-projects-b5dc96b5.vercel.app/places/${place.slug}`;
   const shareText = `Explore ${place.name} in Addis Ababa with Amaha Tours`;
 
   return (
