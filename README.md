@@ -1,6 +1,8 @@
 # Amha Tours
 
-Amha Tours is a responsive travel website for private rides, airport transfers and personalized local tours in Addis Ababa. Visitors can explore destinations, review practical trip information and prepare a direct booking request without creating an account.
+Amha Tours is a responsive travel website for private rides, airport transfers and personalized local tours in Addis Ababa. Visitors can explore destinations, review practical trip information and prepare a direct booking request without creating an account. 
+
+This platform was custom-developed as a commissioned project for a client, designed to fulfill the specific operational needs of a private driver offering city tours and transportation services.
 
 **Live website:** [amhatours.com.et](https://amhatours.com.et)
 
@@ -33,25 +35,4 @@ Client-facing content is managed through a protected dashboard. Authorized users
 
 ## How it works
 
-The public React application loads immediately from static files and retrieves published content from the PHP API. Content changes made in `/admin/` are validated and stored in MySQL. Public booking requests are prepared in the visitor's browser and handed off to WhatsApp; the website does not store those inquiries.
-
-## Local development
-
-Node.js 20.19 or newer is recommended.
-
-```bash
-npm install
-npm run dev
-```
-
-Open `http://localhost:3000`. The frontend uses built-in content when the PHP API is unavailable locally.
-
-## Production build
-
-```bash
-npm run lint
-npm run check:php
-npm run build
-```
-
-The deployment-ready website is generated in `out/`. Server credentials belong only in the ignored `api/config.php` file and must never be committed. See [DEPLOYMENT.md](./DEPLOYMENT.md) for the Plesk deployment checklist.
+The public React application loads immediately from static files and retrieves published content from the PHP API. Content changes made in Dashboard are validated and stored in MySQL. Public booking requests are prepared in the visitor's browser and handed off to WhatsApp; the website does not store those inquiries.
