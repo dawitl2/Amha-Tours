@@ -1,33 +1,57 @@
 # Amha Tours
 
-A responsive React website for Amha's private driver and local tour service in Addis Ababa. The production build is static React/Next.js with a PHP 8 + MySQL content API designed for `amhatours.com.et` on Plesk shared hosting.
+Amha Tours is a responsive travel website for private rides, airport transfers and personalized local tours in Addis Ababa. Visitors can explore destinations, review practical trip information and prepare a direct booking request without creating an account.
 
-## Run the frontend locally
+**Live website:** [amhatours.com.et](https://amhatours.com.et)
 
-Use Node.js 20.19 or newer.
+| Homepage | Place finder |
+| :---: | :---: |
+| ![Amha Tours homepage](./docs/screenshots/home.png) | ![Searchable Addis Ababa place finder](./docs/screenshots/places.png) |
+
+## What the website provides
+
+- Responsive experience for desktop, tablet and mobile visitors.
+- Searchable and filterable Addis Ababa destination directory.
+- Detailed place guides with image galleries, travel time, highlights and activities.
+- Booking forms that prefill the selected destination and prepare a WhatsApp request.
+- Direct access to the business phone and social channels.
+- SEO metadata, structured business data, sitemap and search-engine directives.
+
+Client-facing content is managed through a protected dashboard. Authorized users can update the driver profile, hero content, services, places, descriptions, images, routes, pickup areas, testimonials and contact links without editing the frontend code.
+
+## Technology
+
+| Layer | Tools |
+| --- | --- |
+| Frontend | React 19, Next.js 16, TypeScript, CSS, React Icons |
+| Production build | Static Next.js export served through Apache |
+| Backend | PHP 8, PDO and JSON API endpoints |
+| Database | MySQL with prepared statements |
+| Administration | Secure PHP sessions, CSRF protection, password hashing, login throttling and remember-login cookies |
+| Hosting | Ethio telecom Linux hosting with Plesk and SSL |
+| Source control | Git and GitHub |
+
+## How it works
+
+The public React application loads immediately from static files and retrieves published content from the PHP API. Content changes made in `/admin/` are validated and stored in MySQL. Public booking requests are prepared in the visitor's browser and handed off to WhatsApp; the website does not store those inquiries.
+
+## Local development
+
+Node.js 20.19 or newer is recommended.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`. The public website uses built-in content when the PHP API is not running.
+Open `http://localhost:3000`. The frontend uses built-in content when the PHP API is unavailable locally.
 
-## Build for Plesk
+## Production build
 
 ```bash
-npm run build
+npm run lint
 npm run check:php
+npm run build
 ```
 
-Upload the contents of `out/` to the domain's Plesk document root (normally `httpdocs`). Next copies the PHP API, `.htaccess`, public images and upload protections into `out` during the build.
-
-Then copy `out/api/config.example.php` to `out/api/config.php` on the server, enter the Plesk MySQL credentials and random secrets, and visit `/admin/setup/` once. See [DEPLOYMENT.md](./DEPLOYMENT.md) for the full checklist.
-
-## Content administration
-
-- `/admin/` signs in to the private dashboard.
-- `/admin/setup/` creates the database tables and first administrator exactly once.
-- The initial requested login is `amha` / `amha123`; the first login requires a stronger replacement password.
-- Passwords are hashed by PHP. Sessions and remember-login tokens are stored server-side; authentication tokens are never placed in browser local storage.
-- Public ride inquiries still open WhatsApp and are not stored by this website.
+The deployment-ready website is generated in `out/`. Server credentials belong only in the ignored `api/config.php` file and must never be committed. See [DEPLOYMENT.md](./DEPLOYMENT.md) for the Plesk deployment checklist.

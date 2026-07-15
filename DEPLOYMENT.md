@@ -1,6 +1,6 @@
 # Deploy Amha Tours to Ethio telecom Linux Bronze
 
-The production website is designed for the purchased Linux/Plesk plan. The browser receives the prebuilt React site; PHP handles the admin API and MySQL stores editable content, password hashes and remember-login tokens.
+The production website is designed for standard Linux/Plesk hosting. The browser receives the prebuilt React site; PHP handles the admin API and MySQL stores editable content, password hashes and remember-login tokens.
 
 ## Information to collect from Plesk
 
@@ -38,8 +38,8 @@ In Plesk:
 [Convert]::ToHexString([Security.Cryptography.RandomNumberGenerator]::GetBytes(32)).ToLower()
 ```
 
-7. Browse to `https://amhatours.com.et/admin/setup/`, enter the installation token, username `amha`, and initial password `amha123`.
-8. Sign in at `/admin/` and immediately replace the initial password when prompted.
+7. Browse to `https://amhatours.com.et/admin/setup/` and complete the one-time installation using private administrator credentials.
+8. Sign in at `/admin/` and replace any temporary password immediately when prompted.
 9. In Plesk, enable the free SSL certificate and the redirect from HTTP to HTTPS if it is not already active.
 10. Delete the local ZIP if it contains a configured `config.php`. The repository ignores that file, but it should still be treated as a secret.
 
