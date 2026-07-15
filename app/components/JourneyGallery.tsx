@@ -1,11 +1,14 @@
-import { siteData } from "../data/siteData";
+"use client";
+
+import { useSiteContent } from "../context/SiteContentContext";
 import Link from "next/link";
 
 export function JourneyGallery() {
+  const { journeys } = useSiteContent();
   return (
     <>
       <div className="journey-grid">
-        {siteData.journeys.map((journey) => (
+        {journeys.map((journey) => (
           <article className="image-card journey-card" key={journey.name}>
             <img src={journey.image} alt={journey.name} style={{ objectPosition: journey.position }} />
             <div className="image-card-shade" />

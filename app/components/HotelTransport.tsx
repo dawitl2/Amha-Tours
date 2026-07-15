@@ -1,7 +1,10 @@
-import { siteData } from "../data/siteData";
+"use client";
+
+import { useSiteContent } from "../context/SiteContentContext";
 import Link from "next/link";
 
 export function HotelTransport() {
+  const { hotels } = useSiteContent();
   return (
     <section className="hotel-transport section" aria-labelledby="hotel-title">
       <div className="shell">
@@ -18,7 +21,7 @@ export function HotelTransport() {
         <div className="hotel-grid">
           <div className="hotel-list">
             <p className="example-label">Common pickup areas / no hotel partnership required</p>
-            {siteData.hotels.map((hotel, index) => (
+            {hotels.map((hotel, index) => (
               <Link className="hotel-row" href={`/book?destination=${encodeURIComponent(hotel)}`} key={hotel}>
                 <span>0{index + 1}</span>
                 <strong>{hotel}</strong>

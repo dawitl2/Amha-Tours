@@ -31,8 +31,12 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# vercel
-.vercel
+# server-only PHP credentials and user uploads
+/public/api/config.php
+/hosting/api/config.php
+/public/uploads/*
+!/public/uploads/.htaccess
+!/public/uploads/index.html
 
 # typescript
 next-env.d.ts

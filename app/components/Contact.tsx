@@ -2,14 +2,15 @@
 
 import type { FormEvent } from "react";
 import { FaFacebookF, FaInstagram, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
-import { siteData } from "../data/siteData";
+import { useSiteContent } from "../context/SiteContentContext";
 
 export function Contact({ defaultDestination = "" }: { defaultDestination?: string }) {
+  const { contact, person } = useSiteContent();
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const message = [
-      "Hello Amaha, I would like to ask about a ride.",
+      `Hello ${person.name}, I would like to ask about a ride.`,
       `Name: ${form.get("name") || ""}`,
       `Reply to: ${form.get("contact") || ""}`,
       `Pickup: ${form.get("pickup") || ""}`,
@@ -17,7 +18,7 @@ export function Contact({ defaultDestination = "" }: { defaultDestination?: stri
       `Date: ${form.get("date") || ""}`,
       `Message: ${form.get("message") || ""}`,
     ].join("\n");
-    window.open(`${siteData.contact.whatsappBaseHref}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`${contact.whatsappBaseHref}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -29,21 +30,21 @@ export function Contact({ defaultDestination = "" }: { defaultDestination?: stri
           <p>
             Share your date, pickup and destination. The form prepares a message that you can send from WhatsApp without creating an account.
           </p>
-          <a className="contact-number" href={siteData.contact.phoneHref}>
-            <span>Call Amaha directly</span>
-            <strong>{siteData.contact.displayPhone}</strong>
+          <a className="contact-number" href={contact.phoneHref}>
+            <span>Call {person.name} directly</span>
+            <strong>{contact.displayPhone}</strong>
           </a>
           <div className="social-links" aria-label="Social and messaging links">
-            <a href={siteData.contact.whatsappHref} target="_blank" rel="noreferrer" aria-label="Open WhatsApp">
+            <a href={contact.whatsappHref} target="_blank" rel="noreferrer" aria-label="Open WhatsApp">
               <FaWhatsapp aria-hidden="true" /><span>WhatsApp</span>
             </a>
-            <a href={siteData.contact.telegramHref} target="_blank" rel="noreferrer" aria-label="Open Telegram">
+            <a href={contact.telegramHref} target="_blank" rel="noreferrer" aria-label="Open Telegram">
               <FaTelegramPlane aria-hidden="true" /><span>Telegram</span>
             </a>
-            <a href={siteData.contact.instagramHref} target="_blank" rel="noreferrer" aria-label="Open Instagram">
+            <a href={contact.instagramHref} target="_blank" rel="noreferrer" aria-label="Open Instagram">
               <FaInstagram aria-hidden="true" /><span>Instagram</span>
             </a>
-            <a href={siteData.contact.facebookHref} target="_blank" rel="noreferrer" aria-label="Open Facebook">
+            <a href={contact.facebookHref} target="_blank" rel="noreferrer" aria-label="Open Facebook">
               <FaFacebookF aria-hidden="true" /><span>Facebook</span>
             </a>
           </div>
@@ -57,7 +58,7 @@ export function Contact({ defaultDestination = "" }: { defaultDestination?: stri
             </label>
             <label>
               Phone or email
-              <input name="contact" type="text" placeholder="How can Amaha reply?" required />
+              <input name="contact" type="text" placeholder={`How can ${person.name} reply?`} required />
             </label>
           </div>
           <div className="form-row">

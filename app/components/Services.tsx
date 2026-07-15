@@ -1,6 +1,9 @@
-import { siteData } from "../data/siteData";
+"use client";
+
+import { useSiteContent } from "../context/SiteContentContext";
 
 export function Services() {
+  const { services, servicesIntro } = useSiteContent();
   return (
     <section className="services" id="services" aria-labelledby="services-title">
       <div className="shell">
@@ -10,12 +13,12 @@ export function Services() {
             <h2 id="services-title">Simple, flexible ways to move around Addis</h2>
           </div>
           <p>
-            Choose one ride or plan a full day. Your timing, route and price are confirmed directly with Amaha before the trip.
+            {servicesIntro}
           </p>
         </div>
 
         <div className="service-grid">
-          {siteData.services.map((service) => (
+          {services.map((service) => (
             <article className="service-card" key={service.number}>
               <span className="service-icon" aria-hidden="true">{service.symbol}</span>
               <span className="service-number">{service.number}</span>
@@ -28,4 +31,3 @@ export function Services() {
     </section>
   );
 }
-

@@ -1,8 +1,11 @@
-import { places } from "../data/places";
+"use client";
+
 import { JourneyGallery } from "./JourneyGallery";
 import Link from "next/link";
+import { useSiteContent } from "../context/SiteContentContext";
 
 export function Destinations() {
+  const { places } = useSiteContent();
   return (
     <>
       <section className="destinations section" id="explore" aria-labelledby="destinations-title">
@@ -17,7 +20,7 @@ export function Destinations() {
 
           <div className="destination-grid">
             {places.map((destination, index) => (
-              <Link className="image-card destination-card" href={`/places/${destination.slug}`} key={destination.slug} aria-label={`Explore ${destination.name}`}>
+              <Link className="image-card destination-card" href={`/place?slug=${encodeURIComponent(destination.slug)}`} key={destination.slug} aria-label={`Explore ${destination.name}`}>
                 <img src={destination.images[0].src} alt={destination.images[0].alt} />
                 <div className="image-card-shade" />
                 <div className="image-card-copy">

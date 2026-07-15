@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SiteContentProvider } from "./context/SiteContentContext";
 
-const siteUrl = "https://amaha-tours.vercel.app";
-const title = "Amaha Tours | Private Driver in Addis Ababa";
+const siteUrl = "https://amhatours.com.et";
+const title = "Amha Tours | Private Driver in Addis Ababa";
 const description =
   "Private airport transfers, city rides and personalized Addis Ababa tours arranged directly with a trusted local driver in Ethiopia.";
 
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     title,
     description,
     url: "/",
-    siteName: "Amaha Tours",
+    siteName: "Amha Tours",
     locale: "en_ET",
     type: "website",
   },
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Amaha Tours",
+  name: "Amha Tours",
   url: siteUrl,
   telephone: "+251911010008",
   description,
@@ -80,7 +81,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body>{children}</body>
+      <body><SiteContentProvider>{children}</SiteContentProvider></body>
     </html>
   );
 }

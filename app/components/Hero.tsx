@@ -1,43 +1,29 @@
+"use client";
+
 import { Navbar } from "./Navbar";
 import Link from "next/link";
-
-const heroSteps = [
-  {
-    number: "01",
-    title: "Call Amaha directly",
-    description: "One quick conversation. No account or booking platform.",
-  },
-  {
-    number: "02",
-    title: "Share your plan",
-    description: "Tell him your pickup, timing and the places you want to see.",
-  },
-  {
-    number: "03",
-    title: "Confirm and ride",
-    description: "Agree the time and price, then relax while Amaha handles the route.",
-  },
-] as const;
+import { useSiteContent } from "../context/SiteContentContext";
 
 export function Hero() {
+  const { hero } = useSiteContent();
   return (
     <section className="hero" id="home" aria-labelledby="hero-title">
-      <div className="hero-image" aria-hidden="true" />
+      <div className="hero-image" aria-hidden="true" style={{ backgroundImage: `url(${hero.image})` }} />
       <div className="hero-shade" aria-hidden="true" />
       <div className="hero-inner shell">
         <Navbar />
         <div className="hero-copy">
-          <p className="eyebrow light">Private rides / Addis Ababa</p>
+          <p className="eyebrow light">{hero.eyebrow}</p>
           <h1 id="hero-title">
-            <span className="desktop-hero-text">Explore Addis Ababa with a trusted local driver</span>
-            <span className="mobile-hero-text">Your easier way around Addis</span>
+            <span className="desktop-hero-text">{hero.title}</span>
+            <span className="mobile-hero-text">{hero.mobileTitle}</span>
           </h1>
           <p className="hero-intro">
             <span className="desktop-hero-text">
-              Amaha offers pre-booked airport transfers, private city rides and personalized tours, planned directly with you.
+              {hero.intro}
             </span>
             <span className="mobile-hero-text">
-              Airport pickups, city rides and flexible local tours, arranged directly with Amaha.
+              {hero.mobileIntro}
             </span>
           </p>
           <div className="button-row">
@@ -54,7 +40,7 @@ export function Hero() {
         </div>
 
         <div className="hero-service-strip" aria-label="Three easy steps to arrange a ride">
-          {heroSteps.map((step) => (
+          {hero.steps.map((step) => (
             <article key={step.number}>
               <span>{step.number}</span>
               <h2>{step.title}</h2>
@@ -65,7 +51,7 @@ export function Hero() {
       </div>
 
       <div className="word-ribbon" aria-hidden="true">
-        <span>explore</span><span>discover</span><span>arrive</span><span>connect</span><span>relax</span>
+        {hero.ribbon.map((word) => <span key={word}>{word}</span>)}
       </div>
     </section>
   );

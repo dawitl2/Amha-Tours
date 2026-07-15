@@ -1,4 +1,4 @@
-import { AboutAmaha } from "./components/AboutAmaha";
+import { AboutAmha } from "./components/AboutAmha";
 import { AirportTransfer } from "./components/AirportTransfer";
 import { Contact } from "./components/Contact";
 import { Destinations } from "./components/Destinations";
@@ -16,11 +16,10 @@ export default function Home() {
       <Destinations />
       <AirportTransfer />
       <HotelTransport />
-      <AboutAmaha />
+      <AboutAmha />
       <Testimonials />
       <Contact />
       <Footer />
     </main>
   );
 }
-

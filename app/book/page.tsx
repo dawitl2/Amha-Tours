@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Contact } from "../components/Contact";
+import { Suspense } from "react";
+import { BookingContent } from "../components/BookingContent";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Plan a Ride | Amaha Tours",
-  description: "Prepare a private ride or Addis Ababa tour request for Amaha.",
+  title: "Plan a Ride | Amha Tours",
+  description: "Prepare a private ride or Addis Ababa tour request for Amha.",
 };
 
-export default async function BookPage({ searchParams }: { searchParams: Promise<{ destination?: string }> }) {
-  const { destination = "" } = await searchParams;
-
+export default function BookPage() {
   return (
     <main className="booking-page">
       <div className="place-topbar">
@@ -19,11 +18,11 @@ export default async function BookPage({ searchParams }: { searchParams: Promise
       <section className="booking-hero" aria-labelledby="booking-title">
         <div className="shell booking-hero-inner">
           <div>
-            <p className="eyebrow">Plan with Amaha</p>
+            <p className="eyebrow">Plan with Amha</p>
             <h1 id="booking-title">Build your Addis ride</h1>
           </div>
           <div>
-            <p>Tell Amaha where you want to go and when. If you arrived from a place guide, that destination is already filled in below.</p>
+            <p>Tell Amha where you want to go and when. If you arrived from a place guide, that destination is already filled in below.</p>
             <div className="booking-steps" aria-label="Booking steps">
               <span><b>01</b> Share the plan</span>
               <span><b>02</b> Confirm timing</span>
@@ -32,7 +31,7 @@ export default async function BookPage({ searchParams }: { searchParams: Promise
           </div>
         </div>
       </section>
-      <Contact defaultDestination={destination} />
+      <Suspense fallback={<div className="booking-loading">Loading booking form...</div>}><BookingContent /></Suspense>
       <Footer />
     </main>
   );

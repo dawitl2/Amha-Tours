@@ -25,7 +25,7 @@ export const places: Place[] = [
     cardMeta: "Culture / Gardens / City history",
     description: "A central Addis stop that brings historic buildings, gardens and wildlife into one thoughtfully paced visit.",
     longDescription:
-      "Set within the Grand Palace grounds, Unity Park gives visitors an approachable introduction to Ethiopia's landscapes, history and cultural diversity. It works especially well at the beginning of a city visit because Amaha can pair it with nearby museums, coffee or an evening meal.",
+      "Set within the Grand Palace grounds, Unity Park gives visitors an approachable introduction to Ethiopia's landscapes, history and cultural diversity. It works especially well at the beginning of a city visit because Amha can pair it with nearby museums, coffee or an evening meal.",
     images: [
       { src: "/unity3.webp", alt: "Landscaped gardens inside Unity Park at sunset" },
       { src: "/unity2.webp", alt: "Historic wooden palace building at Unity Park" },

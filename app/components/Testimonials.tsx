@@ -1,6 +1,9 @@
-import { siteData } from "../data/siteData";
+"use client";
+
+import { useSiteContent } from "../context/SiteContentContext";
 
 export function Testimonials() {
+  const { testimonials } = useSiteContent();
   return (
     <section className="testimonials section" aria-labelledby="testimonials-title">
       <div className="shell">
@@ -11,7 +14,7 @@ export function Testimonials() {
         </div>
 
         <div className="testimonial-grid">
-          {siteData.testimonials.map((review) => (
+          {testimonials.map((review) => (
             <article className="testimonial-card" key={review.name}>
               <div className="quote-mark" aria-hidden="true">&ldquo;</div>
               <p>{review.quote}</p>

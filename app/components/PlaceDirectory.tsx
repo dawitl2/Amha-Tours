@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { places } from "../data/places";
+import { useSiteContent } from "../context/SiteContentContext";
 
 const categoryBySlug: Record<string, string> = {
   "unity-park": "Culture",
@@ -10,19 +10,18 @@ const categoryBySlug: Record<string, string> = {
   "entoto-park": "Nature",
 };
 
-const directoryPlaces = Array.from({ length: 3 }, (_, groupIndex) =>
-  places.map((place) => ({
-    ...place,
-    category: categoryBySlug[place.slug],
-    directoryId: `${place.slug}-${groupIndex}`,
-  })),
-).flat();
-
 const filters = ["All", "Culture", "History", "Nature"];
 
 export function PlaceDirectory() {
+  const { places } = useSiteContent();
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("All");
+
+  const directoryPlaces = places.map((place) => ({
+    ...place,
+    category: categoryBySlug[place.slug] ?? place.cardMeta.split(" /")[0] ?? "Culture",
+    directoryId: place.slug,
+  }));
 
   const normalizedQuery = query.trim().toLowerCase();
   const visiblePlaces = directoryPlaces.filter((place) => {
@@ -69,7 +68,7 @@ export function PlaceDirectory() {
             {visiblePlaces.map((place, index) => (
               <Link
                 className="image-card destination-card directory-card"
-                href={`/places/${place.slug}`}
+                href={`/place?slug=${encodeURIComponent(place.slug)}`}
                 key={place.directoryId}
                 aria-label={`Explore ${place.name}`}
               >

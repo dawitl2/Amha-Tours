@@ -4,7 +4,7 @@ import { Navbar } from "../components/Navbar";
 import { PlaceDirectory } from "../components/PlaceDirectory";
 
 export const metadata: Metadata = {
-  title: "Explore Addis Places | Amaha Tours",
+  title: "Explore Addis Places | Amha Tours",
   description: "Search and filter Addis Ababa parks, museums and local tour ideas, then open a full place guide.",
 };
 

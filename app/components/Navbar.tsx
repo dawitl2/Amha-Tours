@@ -2,10 +2,19 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { siteData } from "../data/siteData";
+import { useSiteContent } from "../context/SiteContentContext";
+
+const nav = [
+  { label: "Home", href: "/#home" },
+  { label: "Services", href: "/#services" },
+  { label: "Explore Addis", href: "/places" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
+];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const { brand } = useSiteContent();
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -17,12 +26,12 @@ export function Navbar() {
 
   return (
     <header className="site-header">
-      <Link className="brand" href="/#home" aria-label="Amaha Tours home">
-        <img className="brand-logo" src="/logo.webp" alt="Amaha Tours" />
+      <Link className="brand brand-wordmark" href="/#home" aria-label={`${brand} home`}>
+        <span className="brand-mark" aria-hidden="true">A</span><span>{brand}</span>
       </Link>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
-        {siteData.nav.map((item) => (
+        {nav.map((item) => (
           <Link key={item.href} href={item.href}>
             {item.label}
           </Link>
@@ -51,7 +60,7 @@ export function Navbar() {
         id="mobile-navigation"
         aria-label="Mobile navigation"
       >
-        {siteData.nav.map((item) => (
+        {nav.map((item) => (
           <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
             {item.label}
           </Link>

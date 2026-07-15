@@ -1,5 +1,5 @@
 export const siteData = {
-  brand: "Amaha Tours",
+  brand: "Amha Tours",
   nav: [
     { label: "Home", href: "/#home" },
     { label: "Services", href: "/#services" },
@@ -11,7 +11,7 @@ export const siteData = {
     displayPhone: "+251 911 010 008",
     phoneHref: "tel:+251911010008",
     whatsappBaseHref: "https://wa.me/251911010008",
-    whatsappHref: `https://wa.me/251911010008?text=${encodeURIComponent("Hello Amaha, I would like to ask about a ride in Addis Ababa.")}`,
+    whatsappHref: `https://wa.me/251911010008?text=${encodeURIComponent("Hello Amha, I would like to ask about a ride in Addis Ababa.")}`,
     telegramHref: "https://t.me/+251911010008",
     facebookHref: "https://www.facebook.com/share/17tfT8bqXy/",
     instagramHref: "https://www.instagram.com/amha_abebaw/",

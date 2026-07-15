@@ -9,9 +9,10 @@ type GalleryImage = {
 
 export function PlaceGallery({ images, placeName }: { images: GalleryImage[]; placeName: string }) {
   const [active, setActive] = useState(0);
+  const galleryImages = images.length > 0 ? images : [{ src: "/Addis highlights.webp", alt: `${placeName} in Addis Ababa` }];
 
   const show = (index: number) => {
-    setActive((index + images.length) % images.length);
+    setActive((index + galleryImages.length) % galleryImages.length);
   };
 
   return (
@@ -25,8 +26,8 @@ export function PlaceGallery({ images, placeName }: { images: GalleryImage[]; pl
       }}
     >
       <div className="gallery-stage">
-        <img src={images[active].src} alt={images[active].alt} />
-        <div className="gallery-count" aria-live="polite">{active + 1} / {images.length}</div>
+        <img src={galleryImages[active]?.src} alt={galleryImages[active]?.alt} />
+        <div className="gallery-count" aria-live="polite">{active + 1} / {galleryImages.length}</div>
         <button className="gallery-arrow gallery-prev" type="button" aria-label="Previous image" onClick={() => show(active - 1)}>
           &larr;
         </button>
@@ -35,7 +36,7 @@ export function PlaceGallery({ images, placeName }: { images: GalleryImage[]; pl
         </button>
       </div>
       <div className="gallery-thumbs" aria-label="Choose an image">
-        {images.map((image, index) => (
+        {galleryImages.map((image, index) => (
           <button
             className={index === active ? "is-active" : ""}
             type="button"
